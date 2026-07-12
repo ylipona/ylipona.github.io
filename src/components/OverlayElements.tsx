@@ -1,4 +1,4 @@
-import { CheatConfig } from '../types';
+import type { CheatConfig } from '../types';
 
 type EspTargetProps = {
   config: CheatConfig;
@@ -14,7 +14,7 @@ export function EspTarget({ config, className, name, distance, health = '100%', 
   if (!hasTarget) return null;
 
   return (
-    <div className={`esp-target absolute -translate-x-1/2 -translate-y-1/2 ${className}`}>
+    <div aria-hidden="true" className={`esp-target absolute -translate-x-1/2 -translate-y-1/2 ${className}`}>
       {config.espBox && (
         <div className="esp-frame absolute inset-0">
           <i className="esp-corner esp-corner-tl" />
@@ -31,7 +31,7 @@ export function EspTarget({ config, className, name, distance, health = '100%', 
       )}
 
       {config.espHealth && (
-        <span className="esp-health" aria-label={`Health ${health}`}>
+        <span className="esp-health">
           <span style={{ height: health }} />
         </span>
       )}
@@ -51,7 +51,7 @@ export function AimIndicator({ enabled, size, className }: AimIndicatorProps) {
   if (!enabled) return null;
 
   return (
-    <div className={`absolute z-20 -translate-x-1/2 -translate-y-1/2 ${className}`}>
+    <div aria-hidden="true" className={`absolute z-20 -translate-x-1/2 -translate-y-1/2 ${className}`}>
       <div className="fov-ring" style={{ width: size, height: size }} />
       <div className="aim-reticle" aria-hidden="true">
         <i className="aim-reticle-top" />

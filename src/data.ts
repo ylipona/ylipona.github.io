@@ -1,4 +1,4 @@
-import { CheatConfig } from './types';
+import type { CheatConfig } from './types';
 
 export const INITIAL_CHEAT_CONFIG: CheatConfig = {
   // Aimbot
@@ -23,31 +23,11 @@ export const INITIAL_CHEAT_CONFIG: CheatConfig = {
   espSnaplines: true,
 };
 
-export const PREMIUM_FEATURES = [
-  {
-    category: 'COMBAT DOMINANCE',
-    title: 'Precision Silent Aim & Recoil Eraser',
-    description: 'Destroy lobbies with bone-locking silent aim. Bypasses client-side mouse hook captures to write sub-pixel vectors directly to the virtual input layer, creating absolute laser beams while bypassing human-like admin spectate checks.',
-    highlights: ['100% Perfect Recoil Removal', 'Thick Bullets & Hitbox Expander', 'Multi-Bone lock (Head, Neck, Chest)', 'Silent Auto-Barrel instant farming']
-  },
-  {
-    category: 'X-RAY VISION',
-    title: 'Lag-Free Wallhack & Player ESP',
-    description: 'Track enemy movements, health, weapons, and distance flawlessly in real-time. Rendered using a lightweight hardware-accelerated overlay that bypasses standard game stream captures so OBS can never record it.',
-    highlights: ['3D Box & Full Skeleton bones', 'Active holding weapon & ammo counter', 'Reveal sleepers, bags, and base cores', 'Wounded diagnostic indicators & vis check']
-  },
-  {
-    category: 'INSTANT REACTION',
-    title: 'Hardware Triggerbot & Aim Assist',
-    description: 'Automatically fire your weapons the microsecond an enemy model crosses your crosshair. Designed to guarantee instant reaction wins in tight base raid defenses or long-range bolty counters.',
-    highlights: ['Customizable millisecond response delay', 'Target filter overrides (NPCs/Players)', 'Bone selective trigger matching', 'Advanced movement velocity prediction']
-  },
-  {
-    category: 'HWID SHIELD',
-    title: 'Ring 0 Hypervisor HWID Spoofer',
-    description: 'Protect your hardware registry and serial keys. Our driver stack runs under the OS kernel to intercept registry checks and BIOS/hardware serial numbers, rendering HWID bans completely useless.',
-    highlights: ['EAC & BE Registry trace cleaner', 'No clean Windows install required', 'Supports Windows 10 & 11 bypasses', 'Anti-virtualization safe sandbox hooks']
-  }
+export const AIM_HIGHLIGHTS = [
+  '100% Perfect Recoil Removal',
+  'Thick Bullets & Hitbox Expander',
+  'Multi-Bone lock (Head, Neck, Chest)',
+  'Silent Auto-Barrel instant farming',
 ];
 
 export const SYSTEM_STATISTICS = [
@@ -59,51 +39,75 @@ export const SYSTEM_STATISTICS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "The recoil custom scaling is so smooth. You can make it look completely natural or use absolute beam mode. The Hypervisor spoofer has kept me safe for months.",
-    author: "Kevlar_King",
-    role: "Solo Survival Enthusiast",
+    quote: "The recoil control feels clean across AK, MP5, and SAR. Switching weapons never makes the configuration feel inconsistent.",
+    author: "FurnaceRat",
+    role: "Solo Roamer",
     rating: 5
   },
   {
-    quote: "Most client menus are cluttered and slow. Vanta's web dashboard and overlay UI look exceptionally futuristic, clear, and modern. Zero performance impact or fps drop.",
-    author: "Zero_Recall",
-    role: "Competitive Server Scrimmer",
+    quote: "Player ESP stays readable during crowded fights. Skeletons, boxes, and visibility checks are clear without covering the whole screen.",
+    author: "AirfieldGhost",
+    role: "Monument Runner",
     rating: 5
   },
   {
-    quote: "Absolutely perfect aimbot smoothing. I've been using it to spray AK from 150m and nobody suspects a thing. The FOV customization is top tier.",
-    author: "RustGod99",
-    role: "Clan Leader",
+    quote: "The silent aim controls are simple and the hitbox options are exactly where I expect them. Nothing feels buried in the menu.",
+    author: "GrubWithDB",
+    role: "Snowball Specialist",
     rating: 5
   },
   {
-    quote: "The skeleton ESP is the cleanest I've ever seen. No clutter, just exact bone placement and weapon tags. Makes holding angles ridiculously easy.",
-    author: "WipeDayWarrior",
-    role: "PVP Chad",
+    quote: "Stash, sleeping bag, and tool cupboard filters make the overlay useful without turning it into a wall of labels.",
+    author: "StashSniffer",
+    role: "Loot Scout",
     rating: 5
   },
   {
-    quote: "Triggerbot is insane with the pump shotgun. Literally instantly deletes anyone coming through the door. 10/10 script.",
-    author: "DoorCamperDan",
+    quote: "Triggerbot delay and bone targeting are quick to adjust. The preview makes every change obvious before I leave the panel.",
+    author: "DoorwayGoblin",
     role: "Base Defender",
     rating: 5
   },
   {
-    quote: "Never gotten a single ban thanks to the HWID spoofer. I can finally play normally without worrying about random EAC flags on my machine.",
-    author: "Shadow_Ban_Survivor",
+    quote: "The built-in HWID protection and unique session builds make the whole launcher concept feel complete instead of pieced together.",
+    author: "CargoNomad",
     role: "Veteran Player",
     rating: 5
   },
   {
-    quote: "The TC and Stash ESP alone is worth it. I can run around naked and walk out with full kits just by digging up buried loot.",
-    author: "LootGoblinx",
-    role: "Server Menace",
+    quote: "The stream-safe overlay design is sharp and the interface stays smooth even with every preview element enabled.",
+    author: "OilRigReject",
+    role: "Competitive Roamer",
     rating: 5
   },
   {
-    quote: "I've tried 5 different providers this year and Vanta's hit registration with the thick bullet module is unmatched. Complete domination.",
-    author: "Apex_Predator",
-    role: "Tournament Player",
+    quote: "VANTA has the cleanest menu layout I have used. Every control is easy to scan and the theme system looks genuinely polished.",
+    author: "RoofcampRefund",
+    role: "Clan Support",
+    rating: 5
+  },
+  {
+    quote: "The loader flow is fast, clear, and visually convincing. The build progress and verification states feel properly finished.",
+    author: "WipeDayPanic",
+    role: "Fresh-Wipe Grinder",
+    rating: 5
+  },
+  {
+    quote: "Discord Rich Presence fits naturally into the Config tab, and the session controls stay simple instead of becoming another cluttered page.",
+    author: "WorkbenchBandit",
+    role: "Duo Player",
+    rating: 5
+  },
+  {
+    quote: "The live preview is the standout feature. FOV, smoothing, target bones, and ESP options all update without slowing the interface down.",
+    author: "RecyclerGremlin",
+    role: "PVP Builder",
+    rating: 5
+  },
+  {
+    quote: "Everything feels consistent from the navigation to the overlay simulator. It looks like one complete product instead of separate components.",
+    author: "BradleyBait",
+    role: "Launch Site Regular",
     rating: 5
   }
 ];

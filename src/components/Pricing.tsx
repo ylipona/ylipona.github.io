@@ -333,7 +333,7 @@ function Pricing() {
 
                 <div className="flex gap-3">
                   <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    href="/download/Vanta_Launcher.exe"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-brand-primary text-brand-bg text-center py-3 rounded-[.7rem] font-display font-bold text-xs tracking-wider uppercase hover:brightness-110 transition-all cursor-pointer flex items-center justify-center gap-2"
